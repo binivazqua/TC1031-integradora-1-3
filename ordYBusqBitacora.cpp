@@ -328,25 +328,25 @@ int main()
 
     if (!mesAIndice.count(mesInicioTexto) || !mesAIndice.count(mesFinTexto))
     {
-        cerr << "Mes invalido." << endl;
+        cerr << "No hay registros correspondientes al rango insertado." << endl;
         return 1;
     }
 
-    Registro fechaInicio{};
-    fechaInicio.mesIdx = mesAIndice[mesInicioTexto];
-    fechaInicio.dia = diaInicio;
+    Registro fechaInicio{};                          // inicializamos un registro vacío para almacenar la fecha de inicio
+    fechaInicio.mesIdx = mesAIndice[mesInicioTexto]; // asignamos el índice del mes de inicio al registro
+    fechaInicio.dia = diaInicio;                     // asignamos el día de inicio al registro
 
-    Registro fechaFin{};
+    Registro fechaFin{}; // lo mismo para el fin.
     fechaFin.mesIdx = mesAIndice[mesFinTexto];
     fechaFin.dia = diaFin;
 
     // Límite inferior: primer registro con fecha >= fechaInicio.
-    // Si no existe un registro exacto en esa fecha, esto ya cae naturalmente
-    // en "el primero posterior", por ser lower_bound.
+    // Si no existe un registro exacto en esa fecha, esto ya cae en "el primero posterior" de la búsqueda, por ser lower_bound.
+    // casteamos el indice a int, ya que binarySearch devuelve un int, y idx.size() es size_t (unsigned).
     int posInicio = binarySearch(idx, registros, fechaInicio, 0, (int)idx.size(), false);
 
     // Límite superior: primer registro con fecha > fechaFin (upper_bound),
-    // usando la misma función con estricto = true.
+
     int posFin = binarySearch(idx, registros, fechaFin, 0, (int)idx.size(), true);
 
     if (posInicio >= posFin)
