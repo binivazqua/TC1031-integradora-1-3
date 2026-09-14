@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Algoritmo de ordenamiento Merge Sort sobre los datos en "bitacora.txt".
+
 /**
  * Función auxiliar del algortimo Mergesort, que realiza la lógica de
  * selección del elemento más pequeño entre los subproblemas obtenidos
