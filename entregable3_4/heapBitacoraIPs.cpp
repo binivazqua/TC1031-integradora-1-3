@@ -1,7 +1,5 @@
 /**
- * TC1031 - Act 1.3 / Entregable 3_4
- * Por: Biniza Verónica Vázquez Moreno | A01737294
- *
+ * CONTEXTO:
  * Reutiliza la lógica de parsing de bitacora.txt de entregable1/ordYBusqBitacora.cpp
  * (mismo formato de línea: "Mes Dia hora:minuto:ss ip:puerto mensaje...").
  * A partir de ahí resuelve los 3 puntos de la actividad:
@@ -19,8 +17,8 @@
  *     número correspondiente a cada conteo.
  *
  * Todo implementado con ADTs simples: struct + punteros para el BST,
- * y vector (arreglo dinámico) para el heap. Sin estructuras auxiliares
- * adicionales (nada de unordered_map/set para la lógica nueva): la
+ * y vec para el heap. Sin estructuras auxiliares
+ * adicionales (nada de unordered_map/set para la lógica nueva), la
  * agrupación por primer número se hace con búsqueda lineal sobre el
  * propio arreglo de grupos, igual que buscar en un BST.
  */
